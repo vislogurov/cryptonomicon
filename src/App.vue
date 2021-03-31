@@ -101,9 +101,11 @@
           >
             <div class="px-4 py-5 sm:p-6 text-center">
               <dt class="text-sm font-medium text-gray-500 truncate">
-                {{t.name}}
+                {{ t.name }}
               </dt>
-              <dd class="mt-1 text-3xl font-semibold text-gray-900">{{t.price}}</dd>
+              <dd class="mt-1 text-3xl font-semibold text-gray-900">
+                {{ t.price }}
+              </dd>
             </div>
             <div class="w-full border-t border-gray-200"></div>
             <button
@@ -173,26 +175,25 @@ export default {
 
   data() {
     return {
-      ticker: 'default',
-      tickers: [{ name: 'DEMO', price: '-' },
-      { name: 'DEMO', price: '-' },
-      { name: 'DEMO', price: '-' }]
-    }
+      ticker: "default",
+      tickers: [
+        { name: "DEMO", price: "-" },
+        { name: "DEMO", price: "-" },
+        { name: "DEMO", price: "-" },
+      ],
+    };
   },
 
   methods: {
     add() {
-      const newTicker = { name: this.ticker, price: '-' };
-      this.tickers.push(newTicker)
-      this.ticker = ''
+      const newTicker = { name: this.ticker, price: "-" };
+      this.tickers.push(newTicker);
+      this.ticker = "";
     },
 
     handleDelete(tickersForRemove) {
-      this.tickers = this.tickers.filter(t => t !== tickersForRemove)
-    }
-  }
+      this.tickers = this.tickers.filter((t) => t !== tickersForRemove);
+    },
+  },
 };
 </script>
-
-<style src="./app.css">
-</style>
